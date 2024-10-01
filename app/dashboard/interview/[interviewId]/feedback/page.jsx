@@ -58,11 +58,11 @@ const Feedback = ({ params }) => {
 
   // Render the feedback content when feedback exists
   return (
-    <div className="p-10">
+    <div className="p-2 md:p-10">
       <h2 className="text-3xl font-bold text-green-500">Congratulations!</h2>
       <h2 className="font-bold text-2xl">Here is your interview feedback</h2>
       <h2 className="text-white p-2 rounded-lg w-fit text-lg my-3 bg-primary">
-        Your overall interview rating : <strong>7/10</strong>
+        Your overall interview rating : <strong>?/10</strong>
       </h2>
 
       <h2 className="text-sm text-gray-500">

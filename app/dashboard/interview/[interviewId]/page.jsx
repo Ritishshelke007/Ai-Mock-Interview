@@ -46,15 +46,15 @@ const Interview = ({ params }) => {
       <div className="grid grid-cols-1 md:grid-cols-2 gap-10 w-full">
         <div className="flex flex-col my-5 gap-5">
           <div className="flex flex-col p-5 rounded-lg border gap-5">
-            <h2 className="text-lg">
+            <h2 className="md:text-lg">
               <strong>Job Role / Job Position : </strong>
               {interviewData.jobPosition}
             </h2>
-            <h2 className="text-lg">
+            <h2 className="md:text-lg">
               <strong>Job Description / Tech Stack : </strong>
               {interviewData.jobDescription}
             </h2>
-            <h2 className="text-lg">
+            <h2 className="md:text-lg">
               <strong>Years of Experience : </strong>
               {interviewData.jobExperience}
             </h2>
@@ -64,7 +64,7 @@ const Interview = ({ params }) => {
             <h2 className="flex gap-2 items-center text-yellow-500">
               <Lightbulb /> <strong>Information</strong>
             </h2>
-            <h2 className="text-gray-600">
+            <h2 className="text-gray-600 text-sm">
               {process.env.NEXT_PUBLIC_INFORMATION}
             </h2>
           </div>

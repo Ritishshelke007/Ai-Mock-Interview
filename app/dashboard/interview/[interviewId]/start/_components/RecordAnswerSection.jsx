@@ -90,29 +90,33 @@ const RecordAnswerSection = ({ questions, activeQuestion, interviewData }) => {
       .replace("```json", "")
       .replace("```", "");
 
-    const jsonFeedbackResponse = JSON.parse(mockJsonResponse);
+    try {
+      const jsonFeedbackResponse = JSON.parse(mockJsonResponse);
+      console.log(jsonFeedbackResponse);
 
-    console.log(jsonFeedbackResponse);
+      const resp = await db.insert(userAnswerSchema).values({
+        mockIdRef: interviewData?.mockId,
+        question: currentQuestion,
+        correctAnswer: currentQuestionAnswer,
+        userAnswer: userAnswer,
+        feedback: jsonFeedbackResponse?.feedback,
+        rating: jsonFeedbackResponse?.rating,
+        userEmail: user.primaryEmailAddress?.emailAddress,
+        createdAt: moment().format("DD-MM-yyyy"),
+      });
 
-    const resp = await db.insert(userAnswerSchema).values({
-      mockIdRef: interviewData?.mockId,
-      question: currentQuestion,
-      correctAnswer: currentQuestionAnswer,
-      userAnswer: userAnswer,
-      feedback: jsonFeedbackResponse?.feedback,
-      rating: jsonFeedbackResponse?.rating,
-      userEmail: user.primaryEmailAddress?.emailAddress,
-      createdAt: moment().format("DD-MM-yyyy"),
-    });
+      setIsSubmitting(false);
 
-    setIsSubmitting(false);
-
-    if (resp) {
-      toast("Answer saved successfully");
-      setResults([]);
-    } else {
-      toast("Error saving answer please retry");
+      if (resp) {
+        toast("Answer saved successfully");
+        setResults([]);
+      } else {
+        toast("Error saving answer please retry");
+      }
+    } catch (error) {
+      toast("Error in generating questions please retry");
     }
+
     setResults([]);
     setUserAnswer("");
     setLoading(false);
@@ -122,7 +126,7 @@ const RecordAnswerSection = ({ questions, activeQuestion, interviewData }) => {
       <div className="flex flex-col justify-center items-center bg-black mt-20 rounded-lg p-5 md:max-w-md md:h-72">
         <Image
           src={"/webcam.png"}
-          width={200}
+          width={150}
           height={200}
           className="absolute"
         />

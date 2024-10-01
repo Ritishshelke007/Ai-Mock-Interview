@@ -28,13 +28,15 @@ const Header = () => {
       </div>
       <div className="flex justify-center items-center gap-10">
         <ul className="hidden md:flex gap-8 font-bold text-lg text-gray-700 ">
-          <li
-            className={`hover:text-primary cursor-pointer ${
-              pathname == "/dashboard" && "text-primary"
-            }`}
-          >
-            Home
-          </li>
+          <Link href="/dashboard">
+            <li
+              className={`hover:text-primary cursor-pointer ${
+                pathname == "/dashboard" && "text-primary"
+              }`}
+            >
+              Dashboard
+            </li>
+          </Link>
           <li
             className={`hover:text-primary cursor-pointer ${
               pathname == "/questions" && "text-primary"
