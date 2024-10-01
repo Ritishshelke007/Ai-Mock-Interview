@@ -5,7 +5,7 @@ import { Toaster } from "@/components/ui/sonner";
 const DashboardLayout = ({ children }) => {
   return (
     <div>
-      <div className="mx-5 md:mx-20 lg:mx-36 lg:mt-16">
+      <div className="mx-5 md:mx-20 lg:mx-36 lg:mt-12">
         <Toaster />
         {children}
       </div>

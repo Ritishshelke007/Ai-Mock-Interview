@@ -4,7 +4,9 @@ import Link from "next/link";
 import {
   ArrowUpRightFromSquare,
   CircleUserRound,
+  Github,
   Laptop2,
+  Linkedin,
   MessageSquareDot,
   MoveRight,
 } from "lucide-react";
@@ -157,6 +159,27 @@ const Hero = () => {
           </div>
         </div>
       </div>
+
+      {/* footer */}
+      <footer className="w-full bg-black text-white p-10 mt-10 flex justify-around items-center">
+        <h2>Made with ❤️ by Ritish Shelke </h2>
+        <div className="text-white flex gap-4 justify-center">
+          <a
+            href="https://github.com/ritishshelke007"
+            target="_blank"
+            className="hover:scale-110 transition-all duration-300"
+          >
+            <Github />
+          </a>
+          <a
+            href="https://www.linkedin.com/in/ritish-shelke/"
+            target="_blank"
+            className="hover:scale-110 transition-all duration-300"
+          >
+            <Linkedin />
+          </a>
+        </div>
+      </footer>
     </section>
   );
 };

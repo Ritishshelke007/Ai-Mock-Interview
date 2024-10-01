@@ -86,7 +86,7 @@ const StartInterview = ({ params }) => {
         />
       </div>
 
-      <div className="md:fixed md:bottom-5 md:right-20 p-3  flex justify-center md:justify-end gap-6">
+      <div className=" flex justify-center md:fixed md:bottom-5 md:right-20 p-3  md:justify-end gap-6">
         {/* "Previous Question" button, disabled if it's the first question */}
         <Button
           onClick={() =>

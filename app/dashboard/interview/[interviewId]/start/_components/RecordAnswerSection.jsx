@@ -123,7 +123,7 @@ const RecordAnswerSection = ({ questions, activeQuestion, interviewData }) => {
   };
   return (
     <div className="flex flex-col justify-center items-center h-96">
-      <div className="flex flex-col justify-center items-center bg-black mt-20 rounded-lg p-5 md:max-w-md md:h-72">
+      <div className="flex flex-col justify-center items-center bg-black mt-20 rounded-lg p-5 md:max-w-md ">
         <Image
           src={"/webcam.png"}
           width={150}
@@ -143,7 +143,7 @@ const RecordAnswerSection = ({ questions, activeQuestion, interviewData }) => {
       <Button
         variant="outline"
         disabled={loading || isSubmitting}
-        className="my-10"
+        className="my-5"
         onClick={startStopRecording}
       >
         {isSubmitting ? (
@@ -160,6 +160,12 @@ const RecordAnswerSection = ({ questions, activeQuestion, interviewData }) => {
           </h2>
         )}
       </Button>
+      <p className="text-xs bg-secondary p-2 max-w-md">
+        <strong>Note</strong>: Click on start recording to start recording your
+        answer. Make sure to give brief answer to AI. You will receive response
+        message once your answer is saved successfully. If you did not get any
+        message then please re-record your answer.
+      </p>
     </div>
   );
 };
